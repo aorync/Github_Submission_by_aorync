@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/splash_screen">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.syntxr.github_submission.ui.home.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/nav_detail"
+        android:name="com.syntxr.github_submission.ui.detail.DetailFragment"
+        android:label="DetailFragment" />
+    <fragment
+        android:id="@+id/splash_screen"
+        android:name="com.syntxr.github_submission.ui.splashscreen.SplashScreen"
+        android:label="SplashScreen" >
+        <action
+            android:id="@+id/action_splash_screen_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>
