@@ -1,5 +1,6 @@
 package com.syntxr.github_submission.ui.detail.content.following
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -40,7 +41,8 @@ fun FollowingContent(
 
             DetailState.Loading -> {
                 Row(
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth().height(60.dp),
+                    horizontalArrangement = Arrangement.Center
                 ) {
                     Spacer(modifier = Modifier.height(28.dp))
                     CircularProgressIndicator()
@@ -56,10 +58,10 @@ fun FollowingContent(
                 ) {
                     items(follower) { user ->
                         UserItem(
-                            imgUrl = user.avatarUrl,
-                            name = user.login,
+                            imgUrl = user.avatarUrl.toString(),
+                            name = user.login.toString(),
                             onClick = {
-                                navigate(user.login)
+                                navigate(user.login.toString())
                             }
                         )
                     }

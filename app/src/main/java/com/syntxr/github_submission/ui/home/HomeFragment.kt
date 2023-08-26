@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -183,8 +184,8 @@ fun HomeScreen(
                                 items(state.data) { data ->
                                     val user = data as Item
                                     UserItem(
-                                        name = user.login,
-                                        imgUrl = user.avatarUrl,
+                                        name = user.login.toString(),
+                                        imgUrl = user.avatarUrl.toString(),
                                         onClick = {
                                             val bundle = bundleOf(
                                                 DetailFragment.KEY to user.login
@@ -211,6 +212,8 @@ fun HomeScreen(
                     HomeState.Loading -> {
                         Row(
                             modifier = Modifier.fillMaxWidth()
+                                .height(60.dp),
+                            horizontalArrangement = Arrangement.Center
                         ) {
                             Spacer(modifier = Modifier.height(28.dp))
                             CircularProgressIndicator()
@@ -225,8 +228,8 @@ fun HomeScreen(
                             items(state.data) { data ->
                                 val user = data as UserResponseItem
                                 UserItem(
-                                    imgUrl = user.avatarUrl,
-                                    name = user.login,
+                                    imgUrl = user.avatarUrl.toString(),
+                                    name = user.login.toString(),
                                     onClick = {
                                         val bundle = bundleOf(
                                             DetailFragment.KEY to user.login

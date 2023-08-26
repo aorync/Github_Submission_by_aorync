@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -178,7 +179,8 @@ fun DetailScreen(
             }
             DetailState.Loading -> {
                 Row(
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth().height(60.dp),
+                    horizontalArrangement = Arrangement.Center
                 ) {
                     Spacer(modifier = Modifier.height(28.dp))
                     CircularProgressIndicator()
@@ -203,13 +205,13 @@ fun DetailScreen(
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
-                        text = detail.login,
+                        text = detail.login.toString(),
                         fontWeight = FontWeight.SemiBold,
                         fontSize = 24.sp
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
-                        text = detail.name,
+                        text = detail.name.toString(),
                         fontSize = 14.sp
                     )
                     Spacer(modifier = Modifier.height(16.dp))
