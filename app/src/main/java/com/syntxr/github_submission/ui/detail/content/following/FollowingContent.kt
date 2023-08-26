@@ -1,7 +1,6 @@
 package com.syntxr.github_submission.ui.detail.content.following
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,6 +14,7 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.syntxr.github_submission.data.source.remote.response.user.UserResponse
@@ -40,9 +40,10 @@ fun FollowingContent(
             }
 
             DetailState.Loading -> {
-                Row(
+                Spacer(modifier = Modifier.height(24.dp))
+                Column(
                     modifier = Modifier.fillMaxWidth().height(100.dp),
-                    horizontalArrangement = Arrangement.Center
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Spacer(modifier = Modifier.height(28.dp))
                     CircularProgressIndicator()
