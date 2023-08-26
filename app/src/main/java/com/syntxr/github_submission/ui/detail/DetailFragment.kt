@@ -178,9 +178,10 @@ fun DetailScreen(
                 }
             }
             DetailState.Loading -> {
-                Row(
-                    modifier = Modifier.fillMaxWidth().height(100.dp),
-                    horizontalArrangement = Arrangement.Center
+                Column(
+                    modifier = Modifier.fillMaxSize().height(100.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
                 ) {
                     Spacer(modifier = Modifier.height(28.dp))
                     CircularProgressIndicator()
