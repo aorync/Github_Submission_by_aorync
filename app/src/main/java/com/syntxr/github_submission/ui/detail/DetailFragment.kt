@@ -179,7 +179,7 @@ fun DetailScreen(
             }
             DetailState.Loading -> {
                 Row(
-                    modifier = Modifier.fillMaxWidth().height(60.dp),
+                    modifier = Modifier.fillMaxWidth().height(100.dp),
                     horizontalArrangement = Arrangement.Center
                 ) {
                     Spacer(modifier = Modifier.height(28.dp))

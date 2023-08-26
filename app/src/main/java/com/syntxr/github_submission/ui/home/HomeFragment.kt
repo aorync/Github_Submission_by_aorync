@@ -170,7 +170,7 @@ fun HomeScreen(
 
                         is HomeState.Loading -> {
                             Row(
-                                modifier = Modifier.fillMaxWidth()
+                                modifier = Modifier.fillMaxWidth().height(100.dp)
                             ) {
                                 Spacer(modifier = Modifier.height(28.dp))
                                 CircularProgressIndicator()
@@ -212,7 +212,7 @@ fun HomeScreen(
                     HomeState.Loading -> {
                         Row(
                             modifier = Modifier.fillMaxWidth()
-                                .height(60.dp),
+                                .height(100.dp),
                             horizontalArrangement = Arrangement.Center
                         ) {
                             Spacer(modifier = Modifier.height(28.dp))
